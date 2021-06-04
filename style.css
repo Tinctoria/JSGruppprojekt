@@ -21,7 +21,7 @@ body{
 }
 
 
-h1 {
+h1 , h2 {
     margin-bottom: 3rem;
 }
 
@@ -67,11 +67,13 @@ button:hover {
     flex:1; 
     height: 100%;
     display: flex; 
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
-p {
+textarea {
     width:70%;
+    height: 70%;
+    border-color: lavenderblush;
+    padding: 0.5rem;
 }
-
-
