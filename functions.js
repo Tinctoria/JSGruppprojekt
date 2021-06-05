@@ -1,22 +1,15 @@
-const form=document.getElementById("form");  
-const searchBtn=form.querySelector("button");
-const lyrics=document.getElementById("lyrics-here");
-const errorMsg=document.getElementById("error"); 
-const myArtist=document.getElementById("artist"); 
-const myTitle=document.getElementById("title"); 
-
 //Funktion för felmeddelanden.
 function myErrorMsg(text) {
-        const myError=document.createElement("p");
-        myError.textContent=text;
-        errorMsg.appendChild(myError);
+    const myError=document.createElement("p");
+    myError.textContent=text;
+    errorMsg.appendChild(myError);
 } 
 
 //Funktion för att tömma lyricsfältet på eventuella barn. 
 function clearLyrics() {
-    lyrics.querySelectorAll('p').forEach(n => n.remove());
-    lyrics.querySelectorAll('textarea').forEach(n => n.remove());
-    lyrics.querySelectorAll('h2').forEach(n => n.remove());
+lyrics.querySelectorAll('p').forEach(n => n.remove());
+lyrics.querySelectorAll('textarea').forEach(n => n.remove());
+lyrics.querySelectorAll('h2').forEach(n => n.remove());
 }
 
 // Funktion som kollar om inputfälten är tomma.
@@ -59,6 +52,3 @@ function checkInputFields(event) {
     });
     }
 }
-
-
-searchBtn.addEventListener("click", checkInputFields);

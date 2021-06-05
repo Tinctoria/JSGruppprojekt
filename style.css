@@ -21,15 +21,21 @@ body{
 }
 
 
-h1 , h2 {
+h1 {
     margin-bottom: 3rem;
+}
+
+h2 {
+    margin-bottom: 2rem;
 }
 
 form {
     display:flex; 
     flex-direction: column; 
     padding: 2rem;
-    background-color: hsl(351, 100%, 86%,0.5);
+    background: #C6FFDD;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 5px;
 }
 input {
@@ -74,6 +80,10 @@ button:hover {
 textarea {
     width:70%;
     height: 70%;
-    border-color: lavenderblush;
+    border-color: #C6FFDD;
     padding: 0.5rem;
+}
+
+textarea:focus-visible {
+    outline-color: #C6FFDD;
 }
