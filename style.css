@@ -54,7 +54,7 @@ label:nth-of-type(2) {
 
 form button {
     align-self: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
     width: 64px; 
     height: 2rem;
     background-color: white;

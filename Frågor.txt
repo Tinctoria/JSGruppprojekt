@@ -1,0 +1,4 @@
+Hur kan du i din webbläsare se ifall din Javascript-kod lyckas göra en request mot API:et?
+    
+
+Förklara hur man kan debugga Javascript.

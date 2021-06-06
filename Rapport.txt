@@ -1,0 +1,78 @@
+Inledning 
+
+Uppgiften går ut på att skapa en sida med två inputfält som skall agera sökmotor i ett API. 
+Om sökningen hittar en matchning skall datan från APIet visas i en textruta på skärmen. 
+Vi kommer behöva hantera event, när användaren trycker på sökknappen, och manipulera DOMen 
+genom att skapa och skicka in HTML-element via javascriptkoden. Vi kommer även behöva tillämpa 
+AJAX för kopplingen till APIet.  
+
+
+Del 1: Grundläggning
+
+Först skapade jag ett nytt projekt i visual studio för att bygga min grund. 
+Jag skapade en HTML fil, en css och en js. I HTML länkade jag in min css och js samt gjorde en 
+grov bas för vad jag ville ha på sidan. Ett formulär med två inputfält och en knapp. Samt en enkel
+layout med två delar, en för sökning och en för resultat. 
+Jag är noga med att sätta id på de element som jag vill kunna hitta med Javascripten senare. 
+
+
+
+Del 2: API och fetch 
+
+Sedan började jag med att försöka förstå hur APIet är uppbyggt och tillämpas. Det finns en förklaring
+på APIets sida, men det tog ändå ett tag att begripa hur jag skulle få det att fungera för mitt ändamål. 
+Genom att titta på exempel-länken till APIet kunde jag se att det som skickades tillbaka var ett object 
+som vad namgivet "lyrics". Det kommer jag behöva veta när jag ska hantera responsen. 
+
+Jag skapade min fetch-funktion men insåg snabbt att jag behöver användarens input för att kunna få en 
+hel url att kalla på. 
+Jag skapade de variabler jag ville hämta fråm html till js för de element jag behövde. Detta gjorde jag 
+genom att använda både document.getElementById och querySelector för att testa båda. 
+Sedan skapade jag en fetch på en url som kompletteras med värdena i inputfälten. 
+
+Värdena från inputfälet converterade jag mha encondeURI till tecken som webbläsaren kan läsa. Ett mellanslag 
+blir tex %20. 
+
+
+Del 3: eventListener 
+
+Jag har redan hämtat min knapp genom form.queryselector. Nu skulle jag bara lägga till att lyssna på när någon
+trycker på den. Jag använder knappens variabel och addEventListener på "click". Funktionen som körs i samband
+har jag gjort om ett antal gånger men till slut flyttade jag ut definitionen av den ur eventlistener och bara 
+kallar på den där.
+
+Nästa problem blir att om inputfälten inte är ifyllda skall knappen inte gå att trycka på. 
+Jag behöver alltså vid knapptryckningen kontrollera att båda inputfälten är ifyllda. 
+Jag gör detta med en if-stats. Om något av fälten innehåller en tom sträng så kommer ett meddelande som 
+uppmärksammar användaren på att båda fälten måste fyllas i, och användaren kommer inte vidare. 
+Detta avslutar inte eventet, knappen går fortfarande att trycka på, men den gör inget mer om inte båda fälten fylls i.
+
+
+Del 4: Felhantering och felsökning
+
+Det finns ett fåtal gånger då jag behöver hantera fel: om båda inputfälten inte är ifyllda eller när sökningen inte
+matchar något i APIet. Båda gångerna vill jag visa felmeddelanden. Så jag gör en egen function för det, så kan jag 
+bara kalla på funktionen när den behövs och skicka in ett passande meddelande i den. 
+För att hantera felet att sökningen inte matchar något i APIet skapar jag en .catch till vår fetch. Så om fetchen 
+inte går att genomföra så visas ett felmeddelande. Detta tar hittills väldigt lång tid och jag är inte säker på varför. 
+
+Felsökning har jag främst gjort med hjälp av console.log funktionen, jag har även använt breakpoints i webbläsarens 
+debuggverktyg men är fortfarande ovan vid den.  
+
+
+Del 4: Städning och avslutning 
+
+Slutligen städar jag upp i min kod, jag flyttar funktionerna till en egen js-fil. Jag lägger till lite finesser som 
+att rensa i fältet där lyrics och felmeddelanden visas innan ett nytt resultat kommer upp. Jag vill inte ha kvar 
+gamla låttexter eller felmeddelanden som inte gäller längre. Det löser jag med en inbyggd funktion remove, som jag 
+lägger på alla eventuella barn som jag petat in i mitt lyrics-fält. 
+
+Jag vill även städa upp i inputfälten när en sökning är klar och har hittat något och lägger lite kod för det efter 
+att fetch lyckats. 
+
+Till slut lägger jag lite tid på att snygga till sidan med css. 
+
+
+
+
+

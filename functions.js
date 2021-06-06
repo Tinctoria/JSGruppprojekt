@@ -7,12 +7,12 @@ function myErrorMsg(text) {
 
 //Funktion för att tömma lyricsfältet på eventuella barn. 
 function clearLyrics() {
-lyrics.querySelectorAll('p').forEach(n => n.remove());
-lyrics.querySelectorAll('textarea').forEach(n => n.remove());
-lyrics.querySelectorAll('h2').forEach(n => n.remove());
+lyrics.querySelectorAll('p').forEach(n => n.remove());          //Gamla felmeddelanden
+lyrics.querySelectorAll('textarea').forEach(n => n.remove());   //Gamla lyrics 
+lyrics.querySelectorAll('h2').forEach(n => n.remove());         //Gamla lyrics övertexter
 }
 
-// Funktion som kollar om inputfälten är tomma.
+// Funktion som kollar om inputfälten är tomma och går vidare till fetch eller ej därifrån.
 function checkInputFields(event) {
     clearLyrics();
 
@@ -29,11 +29,11 @@ function checkInputFields(event) {
         fetch(URL).then(function(response){
             response.json().then(function(data){
             const myLyrics=document.createElement("textarea"); 
-            myLyrics.textContent=data.lyrics;
+            myLyrics.textContent=data.lyrics;                      // Lyrics är objektet som ligger i responsen från APIet. 
         
-        //OM FETCH LYCKAS
+        //om fetch lyckas händer detta 
            
-            const mySearch=document.createElement("h2"); 
+            const mySearch=document.createElement("h2");  
             mySearch.textContent="Lyrics for " + myTitle.value+ " by " + myArtist.value;
             
             
@@ -46,7 +46,7 @@ function checkInputFields(event) {
         });
 
         }).catch(function(){
-        //OM FETCH MISSLYCKAS
+        //Om fetch misslyckas händer detta
         //Denna tar lång tid att ladda, kan man korta ner detta på något vis eller är det APIn som gör det? 
             myErrorMsg("Sorry, we could not find that song.")
     });
