@@ -31,21 +31,19 @@ genom att använda både document.getElementById och querySelector för att test
 Sedan skapade jag en fetch på en url som kompletteras med värdena i inputfälten. 
 
 Värdena från inputfälet converterade jag mha encondeURI till tecken som webbläsaren kan läsa. Ett mellanslag 
-blir tex %20. 
+blir tex %20.
 
 
 Del 3: eventListener 
 
-Jag har redan hämtat min knapp genom form.queryselector. Nu skulle jag bara lägga till att lyssna på när någon
-trycker på den. Jag använder knappens variabel och addEventListener på "click". Funktionen som körs i samband
+För att sökknappen skall vara "disabled" vid vissa förutsättningar sätter jag en eventListener först på de båda inputfälten. 
+Den lyssnar på när vi skriver något i fälten med eventet keydown, är något av fälten tomma visas ett felmeddelande. 
+Annars blir knappen klickbar och vi kan gå vidare till nästa event. 
+
+Jag har redan hämtat min knapp genom form.queryselector, och om inputfälten är ifyllda går den att trycka på. 
+Jag använder knappens variabel och addEventListener på "click". Funktionen som körs i samband
 har jag gjort om ett antal gånger men till slut flyttade jag ut definitionen av den ur eventlistener och bara 
 kallar på den där.
-
-Nästa problem blir att om inputfälten inte är ifyllda skall knappen inte gå att trycka på. 
-Jag behöver alltså vid knapptryckningen kontrollera att båda inputfälten är ifyllda. 
-Jag gör detta med en if-stats. Om något av fälten innehåller en tom sträng så kommer ett meddelande som 
-uppmärksammar användaren på att båda fälten måste fyllas i, och användaren kommer inte vidare. 
-Detta avslutar inte eventet, knappen går fortfarande att trycka på, men den gör inget mer om inte båda fälten fylls i.
 
 
 Del 4: Felhantering och felsökning

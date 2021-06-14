@@ -6,4 +6,6 @@ const myArtist=document.getElementById("artist");
 const myTitle=document.getElementById("title"); 
 
 
-searchBtn.addEventListener("click", checkInputFields);
+myArtist.addEventListener("keydown", checkInputFields);
+myTitle.addEventListener("keydown", checkInputFields);
+searchBtn.addEventListener("click", searchForSong);
