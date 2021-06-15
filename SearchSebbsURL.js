@@ -24,11 +24,7 @@ function searchForSong(event) {
             } else { //om fetch inte returnerar data i form av en array händer detta 
                 myErrorMsg("Sorry, we could not find that song.")
             }
-                
-        }).catch(function(){
-            //Om fetch misslyckas händer detta
-            //Denna tar lång tid att ladda, kan man korta ner detta på något vis eller är det APIn som gör det? 
-                myErrorMsg("Sorry, we could not find that song.");
+            
         });
             
     });

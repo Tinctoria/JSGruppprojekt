@@ -1,4 +1,18 @@
-Hur kan du i din webbläsare se ifall din Javascript-kod lyckas göra en request mot API:et?
+1. Hur kan du i din webbläsare se ifall din Javascript-kod lyckas göra en request mot API:et?
+
+    Om man använder inspektionsverktyget i webbläsaren och tittar under console så kan vi se en GET request 
+    som antingen gått igenom eller ej. 
+    Har det lyckats står det fetch finished loading, annars står det fetch failed loading. 
     
 
-Förklara hur man kan debugga Javascript.
+2. Förklara hur man kan debugga Javascript.
+
+    Man kan göra på lite olika sätt. Antingen kan man i VS-code lägga till breakpoints i sin kod, ställen 
+    där man vill att koden skall stanna upp så att man kan kontrollera tex värden på variabler. 
+    Man kan lägga en eller flera breakoints beroende på vad man vill kontrollera, dessa kan man sedan hoppa emellan. 
+    Då kan man tex se hur variablers värde förändras alteftersom koden körs. 
+
+    Breakpoints kan man även lägga till i webbläsarens inspektionsverktyg under sources-fliken. 
+
+    Ett annat sätt att felsöka är att använda sig av console.log för att kontrollera värden, eller returer eller 
+    vad det nu kan vara man vill se. 
