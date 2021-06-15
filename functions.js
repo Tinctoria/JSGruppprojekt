@@ -28,7 +28,7 @@ function checkInputFields(){
 }
 
 //Sökfunktionen
-function searchForSong(event) {
+/*function searchForSong(event) {
     clearLyrics();
     event.preventDefault();
     let URL = "https://api.lyrics.ovh/v1/" + encodeURI(myArtist.value) + "/" + encodeURI(myTitle.value);
@@ -36,6 +36,7 @@ function searchForSong(event) {
     fetch(URL).then(function (response) {
         response.json().then(function (data) {
             const myLyrics = document.createElement("textarea");
+            console.log(data);
             myLyrics.textContent = data.lyrics;                      // Lyrics är objektet som ligger i responsen från APIet. 
 
             //om fetch lyckas händer detta 
@@ -59,4 +60,4 @@ function searchForSong(event) {
             myErrorMsg("Sorry, we could not find that song.")
     });
     
-}
+}*/
