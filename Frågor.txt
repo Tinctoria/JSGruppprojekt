@@ -7,9 +7,12 @@
 
 2. Förklara hur man kan debugga Javascript.
 
-    Man kan göra på lite olika sätt. Antingen kan man i VS-code lägga till breakpoints i sin kod, ställen 
-    där man vill att koden skall stanna upp så att man kan kontrollera tex värden på variabler. 
-    Man kan lägga en eller flera breakoints beroende på vad man vill kontrollera, dessa kan man sedan hoppa emellan. 
+    Man kan göra på lite olika sätt. 
+    
+    Antingen kan man i sin kod skriva kommandot debugger; som skapar en sorts breakpoint där koden stannar upp så 
+    att man kan kontrollera tex värden på variabler, returns eller liknande på den punkten i koden. 
+    Eller så kan man lägga breakpoints i VS-code, det funkar likadant men man behöver inte skriva kommandot i koden.  
+    Man kan lägga en eller flera breakpoints beroende på vad man vill kontrollera, dessa kan man sedan hoppa emellan. 
     Då kan man tex se hur variablers värde förändras alteftersom koden körs. 
 
     Breakpoints kan man även lägga till i webbläsarens inspektionsverktyg under sources-fliken. 
