@@ -22,7 +22,7 @@ function searchForSong(event) {
                 myTitle.value = "";
                 searchBtn.setAttribute("disabled", 1)   
 
-            } else { //om fetchen returnerar en tom array, händer detta: 
+            } else { //om fetchen tex returnerar en tom array, händer detta: 
                 myErrorMsg("Sorry, we could not find that song.")
             }
             

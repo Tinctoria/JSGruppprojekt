@@ -31,8 +31,8 @@ Jag skapade de variabler jag ville hämta fråm html till js för de element jag
 genom att använda både document.getElementById och querySelector för att testa båda. 
 Sedan skapade jag en fetch på en url som kompletteras med värdena i inputfälten. 
 
-Värdena från inputfälet converterade jag mha encondeURI till tecken som webbläsaren kan läsa. Ett mellanslag 
-blir tex %20.
+Värdena från inputfälet converterade jag ursprungligen mha encondeURI till tecken som webbläsaren kan läsa. Ett mellanslag 
+blir tex %20. Men detta skippade jag i den andra sökfunktionen eftersom den inte fyllde någon funktion.  
 
 Efter att API:et gick sönder och vi fick en ny API som fungerade lite annorlunda fick jag skriva om själva sökfunktionen. 
 Jag sparade den gamla men kommenterade ut den och sedan skapade jag en ny i en separat js-fil som jag döpte till SearchSebbsURL.js. 
@@ -76,7 +76,7 @@ lägger på alla eventuella barn som jag petat in i mitt lyrics-fält.
 Jag vill även städa upp i inputfälten när en sökning är klar och har hittat något och lägger lite kod för det efter 
 att fetch lyckats. 
 
-Till slut lägger jag lite tid på att snygga till sidan med css. 
+Till slut lägger jag lite tid på att snygga till sidan med css.  
 
 
 
